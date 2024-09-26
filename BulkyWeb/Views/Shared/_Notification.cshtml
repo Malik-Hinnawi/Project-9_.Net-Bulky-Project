@@ -1,0 +1,16 @@
+@if (TempData["success"] != null)
+{
+    <partial name="_ToastrScript"/>
+    <script type="text/javascript">
+        toastr.info(@TempData["success"]);
+    </script>
+    
+}
+
+@if (TempData["error"] != null)
+{
+    <partial name="_ToastrScript"/>
+    <script type="text/javascript">
+        toastr.error(@TempData["error"]);
+    </script>
+}

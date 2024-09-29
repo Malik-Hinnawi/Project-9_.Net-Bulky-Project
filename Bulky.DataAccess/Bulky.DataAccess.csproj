@@ -13,6 +13,8 @@
 
     <ItemGroup>
         <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="8.0.8"/>
+        <PackageReference Include="Npgsql" Version="8.0.4" />
+        <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="8.0.4" />
     </ItemGroup>
 
     <ItemGroup>
@@ -22,6 +24,11 @@
 
     <ItemGroup>
       <Compile Remove="ExampleJsInterop.cs" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Bulky.Models\Bulky.Models.csproj" />
+      <ProjectReference Include="..\Bulky.Utility\Bulky.Utility.csproj" />
     </ItemGroup>
 
 </Project>

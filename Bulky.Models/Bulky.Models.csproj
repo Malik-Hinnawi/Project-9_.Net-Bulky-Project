@@ -18,10 +18,20 @@
     <ItemGroup>
       <Content Remove="_Imports.razor" />
       <Content Remove="Component1.razor" />
+      <Content Remove="Models\**" />
     </ItemGroup>
 
     <ItemGroup>
       <Compile Remove="ExampleJsInterop.cs" />
+      <Compile Remove="Models\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <EmbeddedResource Remove="Models\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="Models\**" />
     </ItemGroup>
 
 </Project>

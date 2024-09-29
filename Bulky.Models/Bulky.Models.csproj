@@ -1,0 +1,27 @@
+<Project Sdk="Microsoft.NET.Sdk.Razor">
+
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+    </PropertyGroup>
+
+
+    <ItemGroup>
+        <SupportedPlatform Include="browser"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="8.0.8"/>
+    </ItemGroup>
+
+    <ItemGroup>
+      <Content Remove="_Imports.razor" />
+      <Content Remove="Component1.razor" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Compile Remove="ExampleJsInterop.cs" />
+    </ItemGroup>
+
+</Project>

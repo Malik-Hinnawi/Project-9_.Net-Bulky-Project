@@ -2,33 +2,39 @@
 @model List<Category>
 <partial name="_Notification"/>
 
-<div class="container">
-    <div class="row pt-4 pb-3">
-        <div class="col-6">
-            <h2 class="text-primary"> Category List</h2>
-        </div>
-        <div class="col-6 text-end">
-            <a asp-controller="Category" asp-action="Create" class="btn btn-primary">
-                <i class="bi bi-plus-circle-fill"></i> Create New Category
-            </a>
+<div class="card shadow border-0 mt-4">
+    <div class="card-header bg-secondary bg-gradient ml-0 py-3">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h2 class="text-white py-2">Category List</h2>
+            </div>
         </div>
     </div>
-    <table class="table table-bordered table-striped">
-        <thead>
-        <tr>
-            <th>
-                Category Name
-            </th>
-            <th>
-                Display Order
-            </th>
-            <th>
-            </th>
-        </tr>
-        </thead>
-        <tbody>
-        @foreach (var obj in Model.OrderBy(u => u.DisplayOrder))
-        {
+    <div class="card-body">
+        <div class="row">
+            <div class="col-6"></div>
+            <div class="col-6 text-end pb-3">
+                <a asp-controller="Category" asp-action="Create" class="btn btn-primary">
+                    <i class="bi bi-plus-circle-fill"></i> Create New Category
+                </a>
+            </div>
+        </div>
+        <table class="table table-bordered table-striped">
+            <thead>
+            <tr>
+                <th>
+                    Category Name
+                </th>
+                <th>
+                    Display Order
+                </th>
+                <th>
+                </th>
+            </tr>
+            </thead>
+            <tbody>
+            @foreach (var obj in Model.OrderBy(u => u.DisplayOrder))
+            {
             <tr>
                 <td>@obj.Name</td>
                 <td>
@@ -45,7 +51,9 @@
                     </div>
                 </td>
             </tr>
-        }
-        </tbody>
-    </table>
+            }
+            </tbody>
+        </table>
+    </div>
 </div>
+

@@ -43,24 +43,26 @@ public class HomeController : Controller
         var userId = claimsIdentity.FindFirst(ClaimTypes.NameIdentifier).Value;
         cart.ApplicationUserId = userId;
 
+        // Check if an item already exists in the cart for this user and product
         ShoppingCart? cartFromDb = _unitOfWork.ShoppingCart.Get(u => u.ApplicationUserId == userId 
-                                                                    && u.ProductId == cart.ProductId);
+                                                                     && u.ProductId == cart.ProductId);
 
         if (cartFromDb != null)
         {
+            // If found, update the existing entry's count
             cartFromDb.Count += cart.Count;
             _unitOfWork.ShoppingCart.Update(cartFromDb);
             TempData["success"] = "Item Updated in Cart Successfully";
         }
         else
         {
+            cart.Id = 0;
             _unitOfWork.ShoppingCart.Add(cart);
             TempData["success"] = "Item Added to Cart Successfully";
         }
-        
+
         _unitOfWork.Save();
 
-        
         return RedirectToAction(nameof(Index));
     }
 

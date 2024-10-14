@@ -2,6 +2,7 @@ using System.Diagnostics;
 using System.Security.Claims;
 using Bulky.DataAccess.Repository.IRepository;
 using Bulky.Models;
+using Bulky.Utility;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -52,16 +53,18 @@ public class HomeController : Controller
             // If found, update the existing entry's count
             cartFromDb.Count += cart.Count;
             _unitOfWork.ShoppingCart.Update(cartFromDb);
+            _unitOfWork.Save();
             TempData["success"] = "Item Updated in Cart Successfully";
         }
         else
         {
             cart.Id = 0;
             _unitOfWork.ShoppingCart.Add(cart);
+            _unitOfWork.Save();
+            HttpContext.Session.SetInt32(SD.SessionCart,
+                _unitOfWork.ShoppingCart.GetAll(u => u.ApplicationUserId == userId).Count());
             TempData["success"] = "Item Added to Cart Successfully";
         }
-
-        _unitOfWork.Save();
 
         return RedirectToAction(nameof(Index));
     }

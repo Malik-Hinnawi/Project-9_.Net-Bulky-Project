@@ -4,6 +4,7 @@ using Bulky.Models;
 using Bulky.Models.ViewModels;
 using Bulky.Utility;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BulkyWeb.Areas.Customer.Controllers;
@@ -13,11 +14,13 @@ namespace BulkyWeb.Areas.Customer.Controllers;
 public class ShoppingCartController : Controller
 {
     private readonly IUnitOfWork _unitOfWork;
+    private readonly IEmailSender _emailSender;
     [BindProperty]
     public ShoppingCartVM ShoppingCartVm { get; set; }
-    public ShoppingCartController(IUnitOfWork unitOfWork)
+    public ShoppingCartController(IUnitOfWork unitOfWork, IEmailSender emailSender)
     {
         _unitOfWork = unitOfWork;
+        _emailSender = emailSender;
     }
 
     public IActionResult Index()
@@ -183,7 +186,8 @@ public class ShoppingCartController : Controller
             _unitOfWork.Save();
         }
         HttpContext.Session.Clear();
-
+        _emailSender.SendEmailAsync(orderHeader.ApplicationUser.Email, "New Order - Bulky Book",
+            $"<p>New Order created - {orderHeader.Id}</p>");
         List<ShoppingCart> shoppingCarts = _unitOfWork.ShoppingCart
             .GetAll(u => u.ApplicationUserId == orderHeader.ApplicationUserId).ToList(); ;
         

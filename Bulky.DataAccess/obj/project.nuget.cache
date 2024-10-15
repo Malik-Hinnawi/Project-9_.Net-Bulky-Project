@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "ydoyj/Y1PuU=",
+  "dgSpecHash": "8b3aBlCGWnk=",
   "success": true,
   "projectFilePath": "/Users/malikhinnawi/RiderProjects/Bulky/Bulky.DataAccess/Bulky.DataAccess.csproj",
   "expectedPackageFiles": [
@@ -121,6 +121,8 @@
     "/Users/malikhinnawi/.nuget/packages/nuget.projectmodel/6.11.0/nuget.projectmodel.6.11.0.nupkg.sha512",
     "/Users/malikhinnawi/.nuget/packages/nuget.protocol/6.11.0/nuget.protocol.6.11.0.nupkg.sha512",
     "/Users/malikhinnawi/.nuget/packages/nuget.versioning/6.11.0/nuget.versioning.6.11.0.nupkg.sha512",
+    "/Users/malikhinnawi/.nuget/packages/sendgrid/9.29.3/sendgrid.9.29.3.nupkg.sha512",
+    "/Users/malikhinnawi/.nuget/packages/starkbank-ecdsa/1.3.3/starkbank-ecdsa.1.3.3.nupkg.sha512",
     "/Users/malikhinnawi/.nuget/packages/system.codedom/5.0.0/system.codedom.5.0.0.nupkg.sha512",
     "/Users/malikhinnawi/.nuget/packages/system.collections.immutable/7.0.0/system.collections.immutable.7.0.0.nupkg.sha512",
     "/Users/malikhinnawi/.nuget/packages/system.composition/7.0.0/system.composition.7.0.0.nupkg.sha512",

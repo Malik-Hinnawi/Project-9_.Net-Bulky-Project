@@ -56,6 +56,9 @@
                                 <li class="nav-item">
                                     <a class="dropdown-item" asp-area="Identity" asp-page="/Account/Register">Create User</a>
                                 </li>
+                                <li class="nav-item">
+                                    <a class="dropdown-item" asp-area="Admin" asp-controller="User" asp-action="Index">Manage User</a>
+                                </li>
                                 
                                 <li><hr class="dropdown-divider"></li>
                             </ul>
@@ -86,6 +89,7 @@
 </footer>
 <script src="~/lib/jquery/dist/jquery.min.js"></script>
 <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<partial name="_ToastrScript"/>
 <script src="~/js/site.js" asp-append-version="true"></script>
 <script src="https://cdn.tiny.cloud/1/m5leolrkmlsblvrzyhztl6mx9u6gknor8ha1u1w0sceyma9h/tinymce/7/tinymce.min.js" referrerpolicy="origin"></script>
 <script src="//cdn.datatables.net/2.1.8/js/dataTables.min.js" asp-append-version="true"></script>

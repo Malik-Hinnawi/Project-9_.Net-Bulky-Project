@@ -5,7 +5,6 @@ using Bulky.Utility;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
-using Microsoft.EntityFrameworkCore.Metadata.Conventions;
 
 namespace BulkyWeb.Areas.Admin.Controllers;
 

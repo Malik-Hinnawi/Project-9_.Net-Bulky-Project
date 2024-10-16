@@ -1,9 +1,7 @@
 using System.Security.Claims;
 using Bulky.DataAccess.Repository.IRepository;
-using Bulky.Models;
 using Bulky.Models.ViewModels;
 using Bulky.Utility;
-using Humanizer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
